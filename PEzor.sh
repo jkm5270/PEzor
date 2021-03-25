@@ -311,8 +311,8 @@ case $OUTPUT_FORMAT in
             echo 'unsigned int buf_size = sizeof(buf);' >> $TMP_DIR/shellcode.cpp || exit 1
         fi
 
-        CCFLAGS="-O3 -Wl,-strip-all -Wall -pedantic"
-        CPPFLAGS="-O3 -Wl,-strip-all -Wall -pedantic"
+        CCFLAGS="-O3 -Wl,-subsystem,windows"
+        CPPFLAGS="-O3 -Wl,-subsystem,windows"
         CXXFLAGS="-std=c++17 -static"
 
         if [ $BITS -eq 32 ]; then
